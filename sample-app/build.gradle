@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "ivan.sample.mvvm"
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    // Android Support
+    implementation 'com.android.support:design:+'
+    implementation 'com.android.support:support-v4:+'
+    implementation 'com.android.support:appcompat-v7:+'
+    implementation 'com.android.support:recyclerview-v7:+'
+
+    // ReactiveX
+    implementation 'com.jakewharton.rxbinding2:rxbinding:+'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-design:+'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-support-v4:+'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:+'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:+'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:+'
+
+    // Architecture Components
+    implementation 'android.arch.lifecycle:runtime:+'
+    implementation 'android.arch.lifecycle:extensions:+'
+    implementation 'android.arch.persistence.room:runtime:+'
+    implementation 'android.arch.persistence.room:rxjava2:+'
+    annotationProcessor "android.arch.lifecycle:compiler:+"
+    annotationProcessor "android.arch.persistence.room:compiler:+"
+
+    // Square
+    implementation 'com.squareup.retrofit2:retrofit:+'
+    implementation 'com.squareup.retrofit2:converter-gson:+'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:+'
+}
